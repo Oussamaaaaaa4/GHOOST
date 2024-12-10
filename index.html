@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>GHOOST</title>
+</head>
+<body>
+    <!-- Background Video -->
+    <video id="background-video" autoplay loop muted>
+        <source src="your-video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <header>
+        <a href="#" class="logo">OUSSAMA</a>
+        <nav>
+            <a href="#" class="active">Home</a>
+        </nav>
+    </header>
+
+    <section class="home">
+        <div class="home-img">
+            <img src="OUSSAMA.png" alt="">
+        </div>
+        <div class="home-content">
+            <h1>Hi, I'm<span>OUSSAMA</span></h1>
+            <h3 class="typing-text">Welcome I'm<span></span></h3>
+            <p>GHOOST</p>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/just_oussam4/"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Music Player -->
+    <audio id="audio-player" loop autoplay>
+        <source src="Billie_Eilish_-_BIRDS_OF_A_FEATHER_Elijah_The_Boy_Remix_[_YTBMP3.org_].mp3" type="audio/mp3"> 
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Music Toggle Button -->
+    <button id="music-toggle-btn" class="toggle-btn">
+        <i class="fa-solid fa-pause"></i> Pause Music</button>
+
+    <!-- JavaScript to Control Music -->
+    <script>
+        const musicPlayer = document.getElementById('audio-player'); // Get the audio player element
+        const musicToggleBtn = document.getElementById('music-toggle-btn'); // Get the button element
+
+        // Initially start the audio when the page loads (autoplay is set in HTML)
+        musicPlayer.play();
+
+        // Add an event listener to the music toggle button
+        musicToggleBtn.addEventListener('click', () => {
+            if (musicPlayer.paused) {
+                musicPlayer.play(); // If paused, play the music
+                musicToggleBtn.innerHTML = '<i class="fa-solid fa-pause"></i> Pause Music'; // Change button text to "Pause"
+            } else {
+                musicPlayer.pause(); // If playing, pause the music
+                musicToggleBtn.innerHTML = '<i class="fa-solid fa-music"></i> Play Music'; // Change button text to "Play"
+            }
+        });
+    </script>
+</body>
+</html>
